@@ -2,7 +2,7 @@ import React, {useState, useContext} from "react";
 import {MongoDbContext} from "../context/MongoDB/MongoDbContext";
 import {AlertContext} from "../context/Alert/alertContext";
 
-export const Form = ({handle}) => {
+export const FormTodo = ({handle}) => {
 
     const {addNote} = useContext(MongoDbContext)
     const {show} = useContext(AlertContext)
@@ -13,7 +13,7 @@ export const Form = ({handle}) => {
         event.preventDefault()
 
         if(value.trim()) {
-            addNote(value)
+            addNote(value[0].toUpperCase() + value.slice(1))
             setValue('')
             show('Запись добавлена в базу данных', 'success')
         } else {
@@ -28,7 +28,6 @@ export const Form = ({handle}) => {
                 <input
                     type="text"
                     className="form-control"
-                    id="exampleInputPassword1"
                     placeholder='Enter some task'
                     value={value}
                     onChange={(event) => setValue(event.target.value)}

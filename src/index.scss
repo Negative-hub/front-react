@@ -14,6 +14,25 @@ code {
   monospace;
 }
 
+.alert {
+  position: absolute;
+  width: 100%
+}
+
+.alert-enter {
+  opacity: 0;
+}
+
+.alert-enter-active {
+  transition: opacity .6s ease-in-out;
+  opacity: 1;
+}
+
+.alert-exit-active {
+  transition: opacity .4s ease-in-out;
+  opacity: 0;
+}
+
 .form {
   margin: 4rem auto;
 
@@ -115,4 +134,77 @@ code {
   100% { width: 200%; }
 }
 
+.weather {
+  width: 100%;
+  height: 100vh;
+  background-color: #ECEF4E;
+  opacity: .66;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem;
 
+
+  &-item {
+    border-radius: 5px;
+  }
+
+  &-content {
+    margin-top: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+
+    &-search {
+      width: 30%;
+    }
+
+    &-data {
+      position: relative;
+      width: 30%;
+      padding: 1rem 3rem;
+      background-color: #0013ff;
+      border-radius: 5%;
+
+      h2 {
+        text-align: right;
+      }
+
+      .icon-svg {
+        position: absolute;
+        right: -60%;
+        top: -35%;
+
+        span {
+          position: absolute;
+          right: 5%;
+          top: 20%;
+          font-weight: 700;
+          width: 65%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all .2s linear;
+
+  &:hover {
+    background-color: #0013ff;
+    color: #fff;
+  }
+}
+
+.history-title {
+  color: #000;
+  text-align: center;
+}

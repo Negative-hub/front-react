@@ -14,7 +14,7 @@ export const TodoList = ({notes, sort}) => {
                     <CSSTransition
                         key={note.id}
                         timeout={500}
-                        classNames = 'note'
+                        classNames='note'
                     >
                         <li
                             className="list-group-item"

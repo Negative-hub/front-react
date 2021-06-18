@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
-import {Form} from "../components/Form";
+import {FormTodo} from "../components/FormTodo";
 import {TodoList} from "../components/TodoList";
 import {MongoDbContext} from "../context/MongoDB/MongoDbContext";
 import {Loader} from "../components/Loader";
@@ -20,14 +20,14 @@ export const Home = () => {
     }
 
     return (
-        <>
-            <Form handle={handle}/>
+        <div className='container'>
+            <FormTodo handle={handle}/>
 
             {loading
             ? <Loader />
             : <TodoList notes={notes} sort={sort}/>
             }
 
-        </>
+        </div>
     )
 }
