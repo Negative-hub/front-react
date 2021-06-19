@@ -36,6 +36,16 @@ code {
 .form {
   margin: 4rem auto;
 
+  &-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-input {
+      width: 90%;
+    }
+  }
+
   h1 {
     text-align: center;
     margin-bottom: 2rem;
@@ -181,7 +191,7 @@ code {
         span {
           position: absolute;
           right: 5%;
-          top: 20%;
+          top: 15%;
           font-weight: 700;
           width: 65%;
           text-align: center;

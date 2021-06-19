@@ -5,23 +5,31 @@ export const FormWeather = () => {
 
     const [value, setValue] = useState('')
 
-    const {getWeatherByName} = useContext(WeatherContext)
+    const {getWeatherByName, clearHistory} = useContext(WeatherContext)
 
     return (
-        <form onSubmit={(event) => {
+        <form
+            className='form-weather'
+            onSubmit={(event) => {
             event.preventDefault()
             getWeatherByName(value)
             setValue('')
         }}>
-            <div className="mb-3">
                 <input
                     type="text"
-                    className="form-control"
+                    className="form-control form-weather-input"
                     placeholder='Enter city...'
                     value={value}
                     onChange={(event) => setValue(event.target.value)}
                 />
-            </div>
+                <button
+                    type='button'
+                    className='btn btn-danger btn-sm'
+                    title='Очистить список'
+                    onClick={() => clearHistory()}
+                >
+                    &times;
+                </button>
         </form>
     )
 }

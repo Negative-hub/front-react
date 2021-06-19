@@ -31,6 +31,10 @@ export const WeatherState = ({children}) => {
         handle(res.data)
     }
 
+    const clearHistory = () => {
+        setHistory([])
+    }
+
     const handle = (res) => {
         try {
             const weather = {
@@ -53,7 +57,7 @@ export const WeatherState = ({children}) => {
 
     return (
         <WeatherContext.Provider value={{
-            getWeatherByName, weather, history, getWeatherByLocation
+            getWeatherByName, weather, history, getWeatherByLocation, clearHistory
         }}>
             {children}
         </WeatherContext.Provider>

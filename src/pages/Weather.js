@@ -11,7 +11,7 @@ export const Weather = () => {
     useEffect(() => {
         const geo = navigator.geolocation
 
-        geo.getCurrentPosition((props) => {
+        geo.getCurrentPosition(props => {
             getWeatherByLocation(props.coords.latitude, props.coords.longitude)
         })
         // eslint-disable-next-line
